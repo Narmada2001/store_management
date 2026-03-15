@@ -1,0 +1,23 @@
+{
+  "name": "store-management-system",
+  "version": "1.0.0",
+  "description": "Government Office Store Management System",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" \"wait-on http://localhost:5173 http://localhost:5000/api/health && npm run electron\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "electron": "electron .",
+    "build": "cd frontend && npm run build",
+    "start": "concurrently \"npm run backend\" \"npm run electron:prod\"",
+    "electron:prod": "electron ."
+  },
+  "keywords": ["electron", "store-management", "government"],
+  "author": "Government Office",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "wait-on": "^7.2.0"
+  }
+}
