@@ -107,12 +107,12 @@ CREATE TABLE IF NOT EXISTS transactions (
 -- SEED DATA
 -- ─────────────────────────────────────────────
 
--- Default admin user (password: Admin@123)
+-- Default users
+-- admin@store.gov  -> Admin@123
+-- staff@store.gov  -> Staff@123
 INSERT INTO users (name, email, password_hash, role) VALUES
-('System Admin', 'admin@store.gov', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
-('John Staff', 'staff@store.gov', '$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'staff');
-
--- note: password hash above = 'password' via bcrypt. Real Admin@123 hash inserted below via app init.
+('System Admin', 'admin@store.gov', '$2b$10$LwV8DB6y.34wmo4i6AiUB.mWpDRsXLDFL4Wq8M.c/CDpgmtTYVJ8e', 'admin'),
+('John Staff', 'staff@store.gov', '$2b$10$TUpO3cnxfM/jmZJG7mjSr.sbb.YWtfw0xBIVQpdVelarIjuBcM6YS', 'staff');
 
 -- Categories
 INSERT INTO categories (name, description) VALUES
