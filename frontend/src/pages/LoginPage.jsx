@@ -34,8 +34,7 @@ export default function LoginPage() {
                     <div className="inline-flex w-16 h-16 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-2xl items-center justify-center mx-auto mb-4 shadow-xl shadow-primary-500/30 glow">
                         <MdStorefront className="text-white text-3xl" />
                     </div>
-                    <h1 className="text-3xl font-bold text-white">Store Management</h1>
-                    <p className="text-slate-400 mt-1 text-sm">Government Office Portal · Sign in to continue</p>
+                    <h1 className="text-3xl font-bold text-white mt-4">Store Management</h1>
                 </div>
 
                 {/* Form Card */}
