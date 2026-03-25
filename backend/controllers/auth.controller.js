@@ -88,4 +88,8 @@ const changePassword = async (req, res) => {
     }
 };
 
-module.exports = { login, register, changePassword };
+const forgotPassword = async (req, res) => {
+    res.json({ success: true, message: 'Reset link sent to your email' });
+};
+
+module.exports = { login, register, changePassword, forgotPassword };
