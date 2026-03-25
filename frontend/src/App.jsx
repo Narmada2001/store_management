@@ -3,6 +3,8 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 
 import Layout from './components/Layout';
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import Dashboard from './pages/Dashboard';
 import InventoryPage from './pages/InventoryPage';
 import RequestsPage from './pages/RequestsPage';
@@ -23,6 +25,8 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/login" element={user ? <Navigate to="/" replace /> : <LoginPage />} />
+            <Route path="/register" element={user ? <Navigate to="/" replace /> : <RegisterPage />} />
+            <Route path="/forgot-password" element={user ? <Navigate to="/" replace /> : <ForgotPasswordPage />} />
             <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
                 <Route index element={<Dashboard />} />
                 <Route path="inventory" element={<InventoryPage />} />
