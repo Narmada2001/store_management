@@ -51,11 +51,11 @@ export default function Dashboard() {
 
             {/* Quick Action Panels */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className={`card space-y-4 ${isAdmin ? 'md:col-span-2' : ''}`}>
+                <div className="card space-y-4 md:col-span-2">
                     <h3 className="font-semibold text-slate-200 flex items-center gap-2">
                         <MdInventory2 className="text-primary-400" /> Quick Actions
                     </h3>
-                    <div className={`grid gap-3 ${isAdmin ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2'}`}>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                         {[
                             { label: 'View Inventory', to: '/inventory', color: 'bg-primary-600/20 hover:bg-primary-600/30 text-primary-400 border-primary-500/30' },
                             { label: 'New Request', to: '/requests', color: 'bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 border-purple-500/30' },
@@ -69,23 +69,6 @@ export default function Dashboard() {
                         ))}
                     </div>
                 </div>
-
-                {!isAdmin && (
-                    <div className="card space-y-3">
-                        <h3 className="font-semibold text-slate-200">System Info</h3>
-                        {[
-                            { label: 'Role', value: user?.role === 'admin' ? '👑 Admin' : '👤 Staff' },
-                            { label: 'Email', value: user?.email },
-                            { label: 'Database', value: 'MySQL · store_management' },
-                            { label: 'Version', value: 'SMS v1.0.0' },
-                        ].map(({ label, value }) => (
-                            <div key={label} className="flex justify-between items-center py-1.5 border-b border-slate-700/40 last:border-0">
-                                <span className="text-sm text-slate-400">{label}</span>
-                                <span className="text-sm text-slate-200 font-medium">{value}</span>
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
         </div>
     );
